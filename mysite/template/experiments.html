@@ -1,0 +1,104 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>particles.js</title>
+  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+  <meta name="author" content="Vincent Garreau" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="{%static 'css/style.css' %}" rel="stylesheet" media="screen" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- count particles -->
+  <div class="count-particles" style="position: absolute;">
+    <span class="js-count-particles">--</span> particles
+  </div>
+
+  <div class="contents intro-blogs">  
+      <div class="header-blogs eight-bit-font gradient-green">
+        USELESS DATA
+      </div>
+      
+      <div class="ip-blogs monospace-font">
+        <div class="gcontained">
+          <div class="legend">
+            <b>Legend:</b><br>
+            <img src="{%static 'img/legendaryLegend.png' %}" class="limg">
+          </div>
+          <div class="gcontainer">
+            <div class="legend">
+              <img src="{%static 'img/4days.png' %}" class = "responsive">
+            </div>
+            <div class="legend">
+              <a href="{% url 'blog1' %}" style="color: green;">
+                <div class="blog-details insta">Effects of Gravity on Height</div>
+              </a>
+            </div>
+            <div class="legend">
+              <img src="{%static 'img/1week.png' %}" class = "responsive">
+            </div>
+            <div class="legend">
+              <a href="{% url 'blog2' %}" style="color: green;">
+                <div class="blog-details insta">Life Spent on Daily Activities</div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="gconty">
+            <figure>
+              <img src="{%static 'img/legendaryLegend.png' %}" class="limg">
+              <figcaption style="text-align: center;"><i>Legend</i></figcaption>
+            </figure>
+            {% for i in all_blogs %}
+              <figure>
+                <img src="{%static 'img/4days.png' %}" class = "responsive">
+                <figcaption style="text-align: center;"><a href="{% url 'blog1' %}"><div class="insta">{{ i.btitle }}</div></a></figcaption>
+              </figure>
+            {%endfor%}
+        </div>
+      </div>
+  </div>
+
+  <a href="{% url 'donate' %}" style="text-decoration: none;">
+    <div class="donateus-blogs monospace-font">
+      <span class="gradient-green"><b>Donate Us</b></span>
+      <span><i style="font-size: 12px;">(we are poor)</i></span>
+    </div>
+  </a>
+
+  <!-- particles.js container -->
+  <div id="particles-js" style=""></div>
+
+<!-- scripts -->
+<script src="{%static 'js/particles.js' %}"></script>
+<script src="{%static 'js/app.js' %}"></script>
+
+<!-- stats.js -->
+<script src="{%static 'js/lib/stats.js' %}"></script>
+<script>
+  var count_particles, stats, update;
+  stats = new Stats;
+  stats.setMode(0);
+  stats.domElement.style.position = 'absolute';
+  stats.domElement.style.left = '0px';
+  stats.domElement.style.top = '0px';
+  document.body.appendChild(stats.domElement);
+  count_particles = document.querySelector('.js-count-particles');
+  update = function() {
+    stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    }
+    requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<div class="legend">
+          <b style="font-size: 2vw;">Legend:</b>
+          <div class="single-line-div"><div class="months bullets"></div><div style="margin-left: 10px;">Months</div></div>
+          <div class="single-line-div"><div class="weeks bullets"></div><div style="margin-left: 10px;">Weeks</div></div>
+          <div class="single-line-div"><div class="days bullets"></div><div style="margin-left: 10px;">Days</div></div>
+          <div class="single-line-div"><div class="blogger bullets"></div><div style="margin-left: 10px;">Completed</div></div>
+        </div>
+        
+        <!--<div class="single-line-div">-->
+          {% for i in merged %}               <!-- All -->
+            <div class="gridded-blogs">
+              {% for j in i %}                <!-- [m, w, d]... -->
+                {% if forloop.counter == 1 %} <!-- [m] -->
+                  {% for k in j %}          
+                    <div class="months bullets"></div>
+                  {%endfor%}
+                {% endif %}
+                {% if forloop.counter == 2 %} <!-- [w] -->
+                  {% for k in j %}          
+                    <div class="weeks bullets"></div>
+                  {%endfor%}
+                {% endif %}
+                {% if forloop.counter == 3 %} <!-- [d] -->
+                  {% for k in j %}          
+                    <div class="days bullets"></div>
+                  {%endfor%}
+                {% endif %}
+              {%endfor%}
+              <div class="blogger bullets"></div>
+            </div>
+          {%endfor%}
+
+          {% for i in all_blogs %}
+            <div class="blog-details">{{ i.btitle }}</div>
+          {%endfor%}

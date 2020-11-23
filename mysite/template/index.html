@@ -1,0 +1,98 @@
+{% load staticfiles %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>particles.js</title>
+  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+  <meta name="author" content="Vincent Garreau" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="{%static 'css/style.css' %}" rel="stylesheet" media="screen" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- count particles -->
+  <div class="count-particles" style="position: absolute;">
+    <span class="js-count-particles">--</span> particles
+  </div>
+
+  <div class="centered intro">
+      <div class="header eight-bit-font gradient-green">
+        USELESS DATA
+      </div>
+      <div class="ip monospace-font justified-text">
+        Hey! Welcome to our page! We are a psycho-biologist [<a href="https://www.instagram.com/miausola/" target="_blank"><span class="insta">Irene</span></a>] and a geeky computer scientist [<a href="https://www.instagram.com/prax99/" target="_blank"><span class="insta">Prax</span></a>] who enjoy conducting useless experiments and post them on this website. The experiments presented here may content unreliable and bizarre information; if you value science too much, we do not encourage you to read these posts.
+      </div>
+      <div class="gridded monospace-font" style="font-size: 1.2vw;">
+        <!-- Hover #1 -->
+        <a href="{% url 'experiments' %}" style="color:white; text-decoration: none;">
+          <div class="btn btn-one">
+            <span>Experiments</span>
+          </div>  
+        </a>
+        <!-- Hover #2 -->
+        <a href="{% url 'bets' %}" style="color:white; text-decoration: none;">
+          <div class="btn btn-one">
+            <span>Bets</span>
+          </div>
+        </a>
+        <!-- Hover #3 -->
+        <a href="{% url 'contact' %}" style="color:white; text-decoration: none;">
+          <div class="btn btn-one">
+            <span>Contact Us</span>
+          </div>
+        </a>
+      </div>
+  </div>
+
+  <div class="footer monospace-font">
+    <a href="{% url 'donate' %}" style="text-decoration: none;">
+      <div class="btn2 btn-two">
+        <span class="gradient-green"><b>Donate Us</b></span>
+        <span style="font-size: 0.7em;">(we are poor)</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="footy monospace-font">
+    <a href="{% url 'donate' %}" style="text-decoration: none;">
+      <span class="gradient-green"><b>Donate Us</b></span>
+      <span style="font-size: 0.7em; color: white;">(we are poor)</span>
+    </a>
+  </div>
+
+  <!-- particles.js container -->
+  <div id="particles-js" style=""></div>
+
+<!-- scripts -->
+<script src="{%static 'js/particles.js' %}"></script>
+<script src="{%static 'js/app.js' %}"></script>
+
+<!-- stats.js -->
+<script src="{%static 'js/lib/stats.js' %}"></script>
+<script>
+  var count_particles, stats, update;
+  stats = new Stats;
+  stats.setMode(0);
+  stats.domElement.style.position = 'absolute';
+  stats.domElement.style.left = '0px';
+  stats.domElement.style.top = '0px';
+  document.body.appendChild(stats.domElement);
+  count_particles = document.querySelector('.js-count-particles');
+  update = function() {
+    stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    }
+    requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+</script>
+
+</body>
+</html>

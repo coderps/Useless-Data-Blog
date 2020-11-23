@@ -1,0 +1,492 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>particles.js</title>
+  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+  <meta name="author" content="Vincent Garreau" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="{%static 'css/style.css' %}" rel="stylesheet" media="screen" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- count particles -->
+  <div class="count-particles" style="position: absolute;">
+    <span class="js-count-particles">--</span> particles
+  </div>
+
+  <div class="contents intro-blogs">  
+      <div class="header-blogs eight-bit-font gradient-green">
+        USELESS DATA
+      </div>
+      
+      <div class="ip-blogs monospace-font">
+        <div class="post-1">
+          <p class="topic">
+            <b>LIFE SPENT ON DAILY ACTIVITIES</b>
+          </p>
+          <p style="text-align: right;">
+            <i>- By Prax, 14<sup>th</sup> July 2020</i>
+          </p><br>
+          <div class="justified-text">
+            <p>
+              This time we were really jobless in our lives, let us say it was because of “quarantine” [smiley]. So, we randomly started googling weird stuffs like “average time a human takes for peeing” (lets draw a line there [winking smiley]). Then, an idea occurred in my brilliant mind that this deserves a “Useless Data” post. Just in case you are new to this blog, check out our previous post <a href="http://uselessdata.org/experiments/effects-of-gravity-on-height/" target="_blank"><span class="insta">here</span></a>.
+            </p><br>
+            <p>
+              Now, let us proceed with our methods.
+            </p><br>
+            <p class="seperator">
+              <b>METHODS</b>
+            </p><br>
+            <p>
+              <i>Disclaimer: Our methods are very unreliable and do not account for multitasking </i>
+            </p><br>
+            <p>
+              Just googled and did some “awesome” calculations to generalize the time for an average human lifespan [79 years].
+            </p><br>
+            <p>
+                For example, if a person takes about a minute in cutting (and peeling) an average size potato and eats about 1 potato per day in his/her lifetime (compensating for the time when you overeat those fries and wedges, and also for the time when someone else cooks for you); that would give us an average time of 1 minute/day. Then this number is simply taken as a fraction to generalize over 79 years of a human lifespan to give a result of 20 days of our lives doing this particular activity. That’s a whopping 28835 potatoes in your lifetime! Which also roughly estimates to 0.07% of your lifespan. You could have easily utilized this time in watching the entire Star Wars series (including the two side ones) about 20 times.
+            </p><br>
+            <p>
+              I told you, I did some awesome calculations &#x1f60e;
+            </p><br>
+          </div>
+          <div>
+            <figure>
+              <img src="{% static 'img/darthtater.jpg' %}" class="img-darthtater">
+              <figcaption><i>Darth Tater [<a href="https://i2.wp.com/lolzombie.com/wp-content/uploads/2019/03/tater.jpg?ssl=1" target="_blank"><span class="insta">source</span></a>]</i></figcaption>
+            </figure><br>
+          </div>
+          <div class="justified-text">
+            <p class="seperator">
+              <b>RESULTS</b>
+            </p><br>
+            <p>
+              After googling for about nine days to get you guys the best unreliable information available out there, here’s the summary of all the time we waste (or utilize, I guess it is subjective [smiley]) doing an activity:
+            </p><br>
+          </div>
+          <figure class="highcharts-figure">
+            <div id="container"></div>
+            <p class="highcharts-description" style="letter-spacing: 2px; font-size: 12px;">
+              Hover over the bars to get more information about the activities of daily life and be ready to be stunned! You may also make use of the sliders below to change the perspective.
+            </p>
+            <div id="sliders">
+              <table>
+                <tbody><tr>
+                  <td><label for="alpha">Alpha Angle</label></td>
+                  <td><input id="alpha" type="range" min="0" max="45" value="15"> <span id="alpha-value" class="value"></span></td>
+                </tr>
+                <tr>
+                  <td><label for="beta">Beta Angle</label></td>
+                  <td><input id="beta" type="range" min="-45" max="45" value="15"> <span id="beta-value" class="value"></span></td>
+                </tr>
+                <tr>
+                  <td><label for="depth">Depth</label></td>
+                  <td><input id="depth" type="range" min="20" max="100" value="50"> <span id="depth-value" class="value"></span></td>
+                </tr>
+              </tbody></table>
+            </div>
+          </figure>
+          <div class="justified-text">
+            <p>
+              The above graph is obtained with a detailed list of things that we do in our daily lives, as shown below:
+            </p><br>
+          </div>
+          <figure>
+            <img src="{% static 'img/activity.png' %}" class="img-activity">
+            <figcaption><i>Raw Data</i></figcaption>
+          </figure><br>
+          <div class="justified-text">
+            <p class="seperator">
+              <b>CONCLUSIONS</b>
+            </p><br>
+            <p>
+              So, after looking at the results I think it is safe to say that it feels like an achievement when you say, “I was productive today” or in other words “I feel useful”. Maybe after this post, we would be more cautious and spend every second of our days wisely. No more pooping with mobile phones, no more spending those long nights watching YouTube videos. I bet we do a lot more activities in our daily lives and make the tally higher! Let’s be more productive and buy a food processor for our potatoes [smiley].
+            </p><br>
+            <p>
+              PS: I spent about 10 hours of my life writing this useless post, which wasted almost 3 minutes of yours reading it. Now, spend another minute and give us a nice comment below with your thoughts/suggestions
+            </p><br>
+          </div>
+          <figure style="text-align: center;">
+            <img src="{% static 'img/insta-logo.png' %}" height="30" width="30">
+            <figcaption>
+              <i>Follow us on Instagram:
+              <a href="https://www.instagram.com/prax99/" target="_blank"><span class="insta"> @prax99</span></a>
+              <a href="https://www.instagram.com/miausola/" target="_blank"><span class="insta"> @miausola</span></a></i>
+            </figcaption>
+          </figure>
+          <div class="justified-text">
+            <p class="seperator">
+              <b>COMMENTS</b>
+            </p>
+            <div>
+              {% for i in comments %}
+                <div class="gcomments">
+                  <div>
+                      <img src="" height="50" width="50" id="dp{{ forloop.counter }}">
+                  </div>
+                  <div class="comm-desc">
+                    <div class="cname">{{ i.username }} - {{ i.written_at }}</div>
+                    <div>{{ i.cdesc }}</div>
+                  </div>
+                </div>
+              {%endfor%}
+              <form action="" method="post">
+                {% csrf_token %}
+                <div class="grids">
+                  <div>
+                    {% if gif_type == 2 %}
+                        <img src="{% static 'img/gifs/'|add:glink %}" height="50" width="50">
+                    {% else %}
+                        <img src="{{ glink }}" height="50" width="50">
+                    {%endif%}
+                  </div>
+                  <div>
+                    <input type="text" name="name" class="input-box monospace-font" placeholder="Name [Leave it empty an see the magic]" maxlength="50">
+                    <textarea name="comment" class="comment-box monospace-font" placeholder="Write a comment. [No delete option, we see everything :)]" maxlength="1000" required></textarea>
+                    <input type="submit" value="Post" class="post-button monospace-font">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <a href="{% url 'donate' %}" style="text-decoration: none;">
+    <div class="donateus-blogs monospace-font">
+      <span class="gradient-green"><b>Donate Us</b></span>
+      <span><i style="font-size: 12px;">(we are poor)</i></span>
+    </div>
+  </a>
+
+  <!-- particles.js container -->
+  <div id="particles-js" style=""></div>
+
+<!-- scripts -->
+<script src="{%static 'js/particles.js' %}"></script>
+<script src="{%static 'js/app.js' %}"></script>
+<script>
+  var gif_links = ['https://media.giphy.com/media/CaiVJuZGvR8HK/source.gif','https://media.giphy.com/media/EJIFaXV55556M/source.gif','https://media.giphy.com/media/Jk4ZT6R0OEUoM/source.gif','https://media.giphy.com/media/3owypf6HrM3J7UTvAA/source.gif','https://media.giphy.com/media/tPsWbNw7homfm/source.gif','https://media.giphy.com/media/JWeOLmnFvLYB2/source.gif','https://media.giphy.com/media/PKgfwX7ct5f5C/giphy.gif','https://media.giphy.com/media/G8E0raYJHQDVC/source.gif','https://media.giphy.com/media/csXqmaigJhqQU/source.gif','https://media.giphy.com/media/8TL7DBsPtEXqo/source.gif','https://media.giphy.com/media/9r8BF7Cdjkr0f4LLXF/source.gif']
+  for (var i = 1; i <= parseInt('{{ num_of_comments }}'); i++ ) {
+    var r = (Math.floor(Math.random() * 11)+1)
+    if (Math.floor(Math.random() * 2))
+      switch (r.toString()) {
+        case '1':
+          document.getElementById("dp"+i.toString()).src="{%static 'img/gifs/1.gif' %}";
+          break;
+        case '2':
+          document.getElementById("dp"+i.toString()).src="{%static 'img/gifs/2.gif' %}";
+          break;
+        case '3':
+          document.getElementById("dp"+i.toString()).src="{%static 'img/gifs/3.gif' %}";
+          break;
+        case '4':
+          document.getElementById("dp"+i.toString()).src="{%static 'img/gifs/4.gif' %}";
+          break;
+        case '5':
+          document.getElementById("dp"+i.toString()).src="{%static 'img/gifs/5.gif' %}";
+          break;
+        case '6':
+          document.getElementById("dp"+i.toString()).src="{%static 'img/gifs/6.gif' %}";
+          break;
+        case '7':
+          document.getElementById("dp"+i.toString()).src="{%static 'img/gifs/7.gif' %}";
+          break;
+        case '8':
+          document.getElementById("dp"+i.toString()).src="{%static 'img/gifs/8.gif' %}";
+          break;
+        case '9':
+          document.getElementById("dp"+i.toString()).src="{%static 'img/gifs/9.gif' %}";
+          break;
+        case '10':
+          document.getElementById("dp"+i.toString()).src="{%static 'img/gifs/10.gif' %}";
+          break;
+        case '11':
+          document.getElementById("dp"+i.toString()).src="{%static 'img/gifs/11.gif' %}";
+          break;
+      }
+    else
+      document.getElementById("dp"+i.toString()).src=gif_links[(r-1)];
+  }
+</script>
+
+<!-- stats.js -->
+<script src="{%static 'js/lib/stats.js' %}"></script>
+<script>
+  var count_particles, stats, update;
+  stats = new Stats;
+  stats.setMode(0);
+  stats.domElement.style.position = 'absolute';
+  stats.domElement.style.left = '0px';
+  stats.domElement.style.top = '0px';
+  document.body.appendChild(stats.domElement);
+  count_particles = document.querySelector('.js-count-particles');
+  update = function() {
+    stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    }
+    requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+</script>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script>
+  // Set up the chart
+  Highcharts.theme = {
+      colors: ['#2b908f', '#90ee7e', '#f45b5b', '#7798BF', '#aaeeee', '#ff0066',
+          '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
+      chart: {
+          backgroundColor: 'rgba(0,0,0,0)',
+          style: {
+              fontFamily: '\'Unica One\', sans-serif'
+          },
+          plotBorderColor: '#606063'
+      },
+      title: {
+          style: {
+              color: '#E0E0E3',
+              textTransform: 'uppercase',
+          }
+      },
+      tooltip: {
+          backgroundColor: 'rgba(255, 255, 255, 0.85)',
+          style: {
+              color: 'rgba(022,022,022,1)'
+          }
+      },
+      plotOptions: {
+          series: {
+              dataLabels: {
+                  color: '#F0F0F3',
+                  style: {
+                      fontSize: '13px'
+                  }
+              },
+              marker: {
+                  lineColor: '#333'
+              }
+          },
+          boxplot: {
+              fillColor: '#505053'
+          },
+          candlestick: {
+              lineColor: 'white'
+          },
+          errorbar: {
+              color: 'white'
+          }
+      },
+      legend: {
+          backgroundColor: 'rgba(0, 0, 0, 0)',
+          itemStyle: {
+              color: '#E0E0E3'
+          },
+          itemHoverStyle: {
+              color: '#FFF'
+          },
+          itemHiddenStyle: {
+              color: '#606063'
+          },
+          title: {
+              style: {
+                  color: '#C0C0C0'
+              }
+          }
+      },
+      credits: {
+          style: {
+              color: '#666'
+          }
+      },
+      labels: {
+          style: {
+              color: '#707073'
+          }
+      },
+      drilldown: {
+          activeAxisLabelStyle: {
+              color: '#F0F0F3'
+          },
+          activeDataLabelStyle: {
+              color: '#F0F0F3'
+          }
+      },
+      navigation: {
+          buttonOptions: {
+              symbolStroke: '#DDDDDD',
+              theme: {
+                  fill: '#505053'
+              }
+          }
+      },
+      // scroll charts
+      rangeSelector: {
+          buttonTheme: {
+              fill: '#505053',
+              stroke: '#000000',
+              style: {
+                  color: '#CCC'
+              },
+              states: {
+                  hover: {
+                      fill: '#707073',
+                      stroke: '#000000',
+                      style: {
+                          color: 'white'
+                      }
+                  },
+                  select: {
+                      fill: '#000003',
+                      stroke: '#000000',
+                      style: {
+                          color: 'white'
+                      }
+                  }
+              }
+          },
+          inputBoxBorderColor: '#505053',
+          inputStyle: {
+              backgroundColor: '#333',
+              color: 'silver'
+          },
+          labelStyle: {
+              color: 'silver'
+          }
+      },
+      navigator: {
+          handles: {
+              backgroundColor: '#666',
+              borderColor: '#AAA'
+          },
+          outlineColor: '#CCC',
+          maskFill: 'rgba(255,255,255,0.1)',
+          series: {
+              color: '#7798BF',
+              lineColor: '#A6C7ED'
+          },
+          xAxis: {
+              gridLineColor: '#505053'
+          }
+      },
+      scrollbar: {
+          barBackgroundColor: '#808083',
+          barBorderColor: '#808083',
+          buttonArrowColor: '#CCC',
+          buttonBackgroundColor: '#606063',
+          buttonBorderColor: '#606063',
+          rifleColor: '#FFF',
+          trackBackgroundColor: '#404043',
+          trackBorderColor: '#404043'
+      }
+  };
+  // Apply the theme
+  Highcharts.setOptions(Highcharts.theme); 
+  var chart = new Highcharts.Chart({
+    chart: {
+      renderTo: 'container',
+      type: 'column',
+      options3d: {
+        enabled: true,
+        alpha: 15,
+        beta: 15,
+        depth: 50,
+        viewDistance: 25
+      }
+    },
+    title: {
+      text: 'Activities of the day'
+    },
+    subtitle: {
+      text: 'Test options by dragging the sliders below'
+    },
+    plotOptions: {
+      column: {
+        depth: 25
+      }
+    },
+    tooltip: {
+      animation: true,
+      followPointer: true,
+      formatter: function() {
+        if(this.x == 'Sitting')
+          var s = "Star Trek <b>451.71</b> times [34854 minutes]";
+        else if(this.x == 'Sleeping')
+          var s = "The Big Bank Theory <b>1461.39</b> times [8370 minutes]";
+        else if(this.x == 'Suffering from Periods')
+          var s = "Lost <b>738.75</b> times [7260 minutes]";
+        else if(this.x == 'Trying to Sleep')
+          var s = "How I Met Your Mother <b>590.56</b> times [6240 minutes]";
+        else if(this.x == 'Eating')
+          var s = "Prison Break <b>442.14</b> times [5400 minutes]";
+        else if(this.x == 'Makeup (Apply/Remove)')
+          var s = "Friends <b>218.30</b> times [5310 minutes]";
+        else if(this.x == 'Cuddling Cats')
+          var s = "Marvel Movies (Infinity Saga) <b>386.90</b> times [2996 minutes]";
+        else if(this.x == 'Complaining')
+          var s = "Game of Thrones <b>199.50</b> times [4336 minutes]";
+        else if(this.x == 'Blinking')
+          var s = "Breaking Bad <b>283.44</b> times [3052 minutes]";
+        else if(this.x == 'Bathing')
+          var s = "Die Hard Movies <b>1049.82</b> times [618 minutes]";
+        else if(this.x == 'Pooping')
+          var s = "The Hunger Games <b>508.85</b> times [408 minutes]";
+        else if(this.x == 'Sex')
+          var s = "Dark <b>111.47</b> times [1521 minutes]";
+        else if(this.x == 'Brushing Teeth')
+          var s = "The Lord of the Rings <b>172.50</b> times [672 minutes]";
+        else if(this.x == 'Smooching')
+          var s = "Narcos <b>70.62</b> times [1470 minutes]";
+        else if(this.x == 'Shaving')
+          var s = "The Lion King <b>376.30</b> times [200 minutes]";
+        else if(this.x == 'Peeing')
+          var s = "Modern Family <b>13.16</b> times [5390 minutes]";
+        else if(this.x == 'Cutting/Peeling Potatoes')
+          var s = "Star Wars <b>19.52</b> times [1507 minutes]";
+        else if(this.x == 'Crying')
+          var s = "Harry Potter Movies <b>17.59</b> times [1180 minutes]";
+        else if(this.x == 'Adding Salt to the Food')
+          var s = "Titanic <b>10.70</b> times [194 minutes]";
+        return '<b>' + this.y + '</b> Hours<br>You could used this time in watching:<br>' + s;
+      }
+    },
+    xAxis: {
+      categories: ['Sitting', 'Sleeping', 'Suffering from Periods', 'Trying to Sleep', 'Eating', 'Makeup (Apply/Remove)', 'Cuddling Cats', 'Complaining', 'Blinking', 'Bathing', 'Pooping', 'Sex', 'Brushing Teeth', 'Smooching', 'Shaving', 'Peeing', 'Cutting/Peeling Potatoes', 'Crying', 'Adding Salt to the Food']
+    },
+    series: [{
+      name: 'Time in hours/lifespan',
+      data: [10933.27, 8494.31, 3724.52, 2559.11, 1658.01, 804.98, 804.98, 600.73, 600.73, 450.55, 144.16, 117.74, 80.5, 72.09, 52.27, 49.26, 20.42, 14.42, 1.45]
+    }],
+  });
+
+  function showValues() {
+    $('#alpha-value').html(chart.options.chart.options3d.alpha);
+    $('#beta-value').html(chart.options.chart.options3d.beta);
+    $('#depth-value').html(chart.options.chart.options3d.depth);
+  }
+
+  // Activate the sliders
+  $('#sliders input').on('input change', function () {
+    chart.options.chart.options3d[this.id] = parseFloat(this.value);
+    showValues();
+    chart.redraw(false);
+  });
+
+  showValues();
+</script>
+
+</body>
+</html>

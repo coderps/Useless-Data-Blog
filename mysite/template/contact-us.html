@@ -1,0 +1,87 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>particles.js</title>
+  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+  <meta name="author" content="Vincent Garreau" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="{%static 'css/style.css' %}" rel="stylesheet" media="screen" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body style="overflow-y: hidden;">
+
+  <!-- count particles -->
+  <div class="count-particles" style="position: absolute;">
+    <span class="js-count-particles">--</span> particles
+  </div>
+
+  <div class="intro-blogs">  
+      <div class="contact-blogs eight-bit-font gradient-green">
+        USELESS DATA
+      </div>
+      
+      <div class="centered ip-cu monospace-font justified-text">
+        <div class="cu-header">
+          <b>CONTACT US</b>
+        </div>
+        <form action="" method="post">
+          {% csrf_token %}
+          <div>
+            <input type="text" name="cname" class="cu-name monospace-font" placeholder="Name [Optional]" maxlength="50">
+          </div>
+          <div>
+            <input type="email" name="email" class="cu-name monospace-font" placeholder="Email" maxlength="500" required>
+          </div>
+          <div>
+            <textarea name="message" class="comment-box monospace-font cu-message-box" placeholder="Leave a message [make sure that it is not as useless as this website]" maxlength="500" required></textarea>
+          </div>
+          <div>
+            <input type="submit" value="Send" class="post-button monospace-font">
+          </div>
+        </form>
+      </div>
+
+  </div>
+
+  <a href="{% url 'donate' %}" style="text-decoration: none;">
+    <div class="donateus-blogs monospace-font">
+      <span class="gradient-green"><b>Donate Us</b></span>
+      <span><i style="font-size: 12px;">(we are poor)</i></span>
+    </div>
+  </a>
+
+  <!-- particles.js container -->
+  <div id="particles-js" style=""></div>
+
+<!-- scripts -->
+<script src="{%static 'js/particles.js' %}"></script>
+<script src="{%static 'js/app.js' %}"></script>
+
+<!-- stats.js -->
+<script src="{%static 'js/lib/stats.js' %}"></script>
+<script>
+  var count_particles, stats, update;
+  stats = new Stats;
+  stats.setMode(0);
+  stats.domElement.style.position = 'absolute';
+  stats.domElement.style.left = '0px';
+  stats.domElement.style.top = '0px';
+  document.body.appendChild(stats.domElement);
+  count_particles = document.querySelector('.js-count-particles');
+  update = function() {
+    stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    }
+    requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+</script>
+
+</body>
+</html>

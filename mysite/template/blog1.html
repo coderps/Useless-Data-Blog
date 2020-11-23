@@ -1,0 +1,287 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>particles.js</title>
+  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+  <meta name="author" content="Vincent Garreau" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="{%static 'css/style.css' %}" rel="stylesheet" media="screen" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- count particles -->
+  <div class="count-particles" style="position: absolute;">
+    <span class="js-count-particles">--</span> particles
+  </div>
+
+  <div class="contents intro-blogs">  
+      <div class="header-blogs eight-bit-font gradient-green">
+        USELESS DATA
+      </div>
+      
+      <div class="ip-blogs monospace-font">
+        <div class="post-1">
+          <p class="topic">
+            <b>EFFECTS OF GRAVITY ON HEIGHT</b>
+          </p>
+          <p style="text-align: right;">
+            <i>- By Irene, 19<sup>th</sup> April 2020</i>
+          </p><br>
+          <div class="justified-text">
+            <p>
+              When I first heard this idea from Prax I got very excited: measuring the changes in height during the day due to gravity… such a non-sense experiment! What I didn´t know is that he really meant it: he was convinced that the gravity can swing our heights a few centimetres up and down every day. A few centimetres!
+            </p><br>
+            <p>
+              <b>So the idea is simple:</b> when you are standing, the gravity will exert more pressure in your longitudinal axis and you will shorten; on the contrary, when you are lying the gravity force will be perpendicular to you so you will elongate. Here is a simple depiction:
+            </p><br>
+          </div>
+          <figure>
+            <img src="{% static 'img/intro-img.jpg' %}" class="img-theory">
+            <figcaption><i>Theory</i></figcaption>
+          </figure><br>
+          <div class="justified-text">
+            <p>
+              And I repeat: we are not talking about small changes in the microscale, <b>we are talking about various cm difference.</b>
+            </p><br>
+            <p>
+              I had to prove him wrong, so I accepted the challenge.
+            </p><br>
+            <p class="seperator">
+              <b>HYPOTHESIS</b>
+            </p><br>
+            <p>
+              <b>The height will decrease throughout the day more than 1 cm</b> (due to the effect of gravity).
+            </p><br>
+            <p>
+              Note that I wrote <i>“due to the effect of gravity”</i> into parenthesis because we can´t determine the actual cause of the height reduction. We still don´t have zero-gravity rooms.  
+            </p><br>
+            <p>
+              <b>- Prax´s prediction:</b> yes, of course, height decreases with gravity a few cm every day and increases during the night while you sleep. Didn´t you know it?
+            </p><br>
+            <p>
+              <b>- Irene´s prediction:</b> bullshit.
+            </p><br>
+            <p class="seperator">
+              <b>METHODS</b>
+            </p><br>
+            <p>
+              Two height measurements we taken for each day: 1 before sleeping and 1 after waking up. Each measurement was repeated two to three times to have an estimation of the error. The experiment was conducted for 4 days.
+            </p><br>
+            <p>
+              The height measurement system consisted of the following items:
+            </p><br>
+            <p>
+                - A wall<br>
+                - Measuring tape<br>
+                - Tape (to tape the tape)<br>
+                - The lid of a box<br>
+                - A clipboard with a painted owl<br>
+                - Pen and paper<br>
+                - Determination to wake up together at the same time every day<br>
+            </p><br>
+            <p>
+              The measuring method can be seen in the following images:
+            </p><br>
+          </div>
+          <div>
+            <figure>
+              <img src="{% static 'img/m1.jpeg' %}" class="img-measurement">
+              <img src="{% static 'img/owl.jpg' %}" class="img-owl">
+              <img src="{% static 'img/m2.jpeg' %}" class="img-measurement">
+              <figcaption><i>Measuring System</i></figcaption>
+            </figure>
+          </div><br>
+          <div class="justified-text">
+            <p class="seperator">
+              <b>RESULTS</b>
+            </p><br>
+            <p>
+              So this is the raw data. We took 2 replicate measurements at 10:00 and at 00:00 for the following 4 days:
+            </p><br>
+          </div>
+          <figure>
+            <img src="{% static 'img/r1.JPG' %}" class="img-results">
+            <figcaption><i>Raw Data</i></figcaption>
+          </figure><br>
+          <div class="justified-text">
+            <p>
+              We calculated the mean and standard deviation for each of us at morning and night-time. Note that our awesome height measuring system had a very low error! &#x1f60e;
+            </p><br>
+          </div>
+          <figure>
+            <img src="{% static 'img/r2.JPG' %}" class="img-results">
+            <figcaption><i>Mean and Standard Deviation</i></figcaption>
+          </figure><br>
+          <div class="justified-text">
+            <p>
+              Then, to see if the differences between morning height and night height were statistically significant, we did a t-test with 95% confidence interval.
+            </p><br>
+          </div>
+          <div>
+            <span>
+              <figure>
+                <img src="{% static 'img/ri.png' %}" class="img-results2">
+                <figcaption><i>T-test for Irene</i></figcaption>
+              </figure>
+            </span>
+            <span>
+              <figure>
+                <img src="{% static 'img/rp.png' %}" class="img-results2">
+                <figcaption><i>T-test for Prax</i></figcaption>
+              </figure>
+            </span>
+          </div><br>
+          <div class="justified-text">
+            <p>
+              Result… both were strongly significant!
+            </p><br>
+            <p>
+              <b>Our heights decreased around 2 cm during the day.</b> Point for Prax &#x1f648;
+            </p><br>
+          </div>
+          <figure>
+            <img src="{% static 'img/results.JPG' %}" class="img-graph">
+            <figcaption><i>Final Results</i></figcaption>
+          </figure>
+          <div class="justified-text">
+            <p class="seperator">
+              <b>CONCLUSIONS</b>
+            </p><br>
+            <p>
+              So, even though we can´t still prove that the height shrinking is due to gravity (other possibilities are a worsening of flexibility during the day, or the polishing of the feet while we walk which magically reverses during sleeping); the fact is that people are shorter in the night than in the morning (or at least us). How fast is this shortening we don´t know… we were not intelligent enough to take several measurements per day to see if the shortening is gradual or sharp, so it´s still possible that the height increases by 10cm in mid-day and decreases by 12cm later on… you never know. We will unveil this and other problems soon and update our data. If you have any suggestions, just leave a comment!
+            </p><br>
+          </div>
+          <figure style="text-align: center;">
+            <img src="{% static 'img/insta-logo.png' %}" height="30" width="30">
+            <figcaption>
+              <i>Follow us on Instagram:
+              <a href="https://www.instagram.com/prax99/" target="_blank"><span class="insta"> @prax99</span></a>
+              <a href="https://www.instagram.com/miausola/" target="_blank"><span class="insta"> @miausola</span></a></i>
+            </figcaption>
+          </figure>
+          <div class="justified-text">
+            <p class="seperator">
+              <b>COMMENTS</b>
+            </p>
+            <div>
+              {% for i in comments %}
+                <div class="gcomments">
+                  <div>
+                      <img src="" height="50" width="50" id="dp{{ forloop.counter }}">
+                  </div>
+                  <div class="comm-desc">
+                    <div class="cname">{{ i.username }} - {{ i.written_at }}</div>
+                    <div>{{ i.cdesc }}</div>
+                  </div>
+                </div>
+              {%endfor%}
+              <form action="" method="post">
+                {% csrf_token %}
+                <div class="grids">
+                  <div>
+                    {% if gif_type == 2 %}
+                        <img src="{% static 'img/gifs/'|add:glink %}" height="50" width="50">
+                    {% else %}
+                        <img src="{{ glink }}" height="50" width="50">
+                    {%endif%}
+                  </div>
+                  <div>
+                    <input type="text" name="name" class="input-box monospace-font" placeholder="Name [Optional]" maxlength="50">
+                    <textarea name="comment" class="comment-box monospace-font" placeholder="Write a comment. [No delete option, we see everything :)]" maxlength="1000" required></textarea>
+                    <input type="submit" value="Post" class="post-button monospace-font">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <a href="{% url 'donate' %}" style="text-decoration: none;">
+    <div class="donateus-blogs monospace-font">
+      <span class="gradient-green"><b>Donate Us</b></span>
+      <span><i style="font-size: 12px;">(we are poor)</i></span>
+    </div>
+  </a>
+
+  <!-- particles.js container -->
+  <div id="particles-js" style=""></div>
+
+<!-- scripts -->
+<script src="{%static 'js/particles.js' %}"></script>
+<script src="{%static 'js/app.js' %}"></script>
+<script>
+  var gif_links = ['https://media.giphy.com/media/CaiVJuZGvR8HK/source.gif','https://media.giphy.com/media/EJIFaXV55556M/source.gif','https://media.giphy.com/media/Jk4ZT6R0OEUoM/source.gif','https://media.giphy.com/media/3owypf6HrM3J7UTvAA/source.gif','https://media.giphy.com/media/tPsWbNw7homfm/source.gif','https://media.giphy.com/media/JWeOLmnFvLYB2/source.gif','https://media.giphy.com/media/PKgfwX7ct5f5C/giphy.gif','https://media.giphy.com/media/G8E0raYJHQDVC/source.gif','https://media.giphy.com/media/csXqmaigJhqQU/source.gif','https://media.giphy.com/media/8TL7DBsPtEXqo/source.gif','https://media.giphy.com/media/9r8BF7Cdjkr0f4LLXF/source.gif']
+  for (var i = 1; i <= parseInt('{{ num_of_comments }}'); i++ ) {
+    var r = (Math.floor(Math.random() * 11)+1)
+    if (Math.floor(Math.random() * 2))
+      switch (r.toString()) {
+        case '1':
+          document.getElementById("dp"+i.toString()).src="{%static 'img/gifs/1.gif' %}";
+          break;
+        case '2':
+          document.getElementById("dp"+i.toString()).src="{%static 'img/gifs/2.gif' %}";
+          break;
+        case '3':
+          document.getElementById("dp"+i.toString()).src="{%static 'img/gifs/3.gif' %}";
+          break;
+        case '4':
+          document.getElementById("dp"+i.toString()).src="{%static 'img/gifs/4.gif' %}";
+          break;
+        case '5':
+          document.getElementById("dp"+i.toString()).src="{%static 'img/gifs/5.gif' %}";
+          break;
+        case '6':
+          document.getElementById("dp"+i.toString()).src="{%static 'img/gifs/6.gif' %}";
+          break;
+        case '7':
+          document.getElementById("dp"+i.toString()).src="{%static 'img/gifs/7.gif' %}";
+          break;
+        case '8':
+          document.getElementById("dp"+i.toString()).src="{%static 'img/gifs/8.gif' %}";
+          break;
+        case '9':
+          document.getElementById("dp"+i.toString()).src="{%static 'img/gifs/9.gif' %}";
+          break;
+        case '10':
+          document.getElementById("dp"+i.toString()).src="{%static 'img/gifs/10.gif' %}";
+          break;
+        case '11':
+          document.getElementById("dp"+i.toString()).src="{%static 'img/gifs/11.gif' %}";
+          break;
+      }
+    else
+      document.getElementById("dp"+i.toString()).src=gif_links[(r-1)];
+  }
+</script>
+
+<!-- stats.js -->
+<script src="{%static 'js/lib/stats.js' %}"></script>
+<script>
+  var count_particles, stats, update;
+  stats = new Stats;
+  stats.setMode(0);
+  stats.domElement.style.position = 'absolute';
+  stats.domElement.style.left = '0px';
+  stats.domElement.style.top = '0px';
+  document.body.appendChild(stats.domElement);
+  count_particles = document.querySelector('.js-count-particles');
+  update = function() {
+    stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    }
+    requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+</script>
+
+</body>
+</html>
