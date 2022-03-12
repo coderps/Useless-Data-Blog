@@ -1,0 +1,24 @@
+.landing-page {
+  width: 80%;
+  margin: auto;
+}
+
+.general-padding {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.intro {
+  width: 50%;
+  margin: auto;
+  font-size: medium;
+}
+
+.intro > a {
+  color: gray;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #008f11;
+}
