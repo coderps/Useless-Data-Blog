@@ -1,0 +1,55 @@
+@use "general";
+
+.landing-page {
+  width: 80%;
+  margin: auto;
+}
+
+.intro {
+  @extend .theme-borders, .monospace-font;
+  width: 55%;
+  font-size: large;
+  margin: 50px auto;
+}
+
+.intro > a {
+  color: gray;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #008f11;
+}
+
+.hover-btn {
+  @extend .btn, .btn-one, .monospace-font;
+  font-size: large;
+}
+
+.navBtns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  max-width: 80%;
+  margin: auto;
+  padding-top: 50px;
+}
+
+.donateBtn {
+  @extend .theme-borders, .monospace-font;
+  text-align: center;
+  letter-spacing: 2px;
+  cursor: pointer;
+  font-size: large;
+  padding: 10px;
+  margin-top: 80px;
+  .smaller {
+    padding-left: 10px;
+    font-size: 0.7em;
+  }
+}
+
+.donateBtn:hover {
+  transition: all 0.3s;
+  transform: scale(1.1, 1);
+}

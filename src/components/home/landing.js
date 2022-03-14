@@ -1,7 +1,9 @@
 import React from "react";
-import Logo from "../logo";
+import Logo from "../general/logo";
 import Intro from "./intro";
-import "../../static/css/landing.css";
+import "../../static/css/landing.scss";
+import NavBtns from "./navBtns";
+import DonateBtn from "./donateBtn";
 
 const LandingPage = () => {
   return (
@@ -9,6 +11,8 @@ const LandingPage = () => {
       <Logo />
       <div className="general-padding">
         <Intro />
+        <NavBtns />
+        <DonateBtn />
       </div>
     </div>
   );
