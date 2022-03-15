@@ -1,0 +1,9 @@
+@use "general";
+
+.experiments {
+  @extend .disable-bg, .theme-borders, .monospace-font;
+  height: 80vh;
+  width: 80vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}

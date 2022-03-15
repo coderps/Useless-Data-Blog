@@ -6,7 +6,7 @@
 }
 
 .intro {
-  @extend .theme-borders, .monospace-font;
+  @extend .theme-borders, .monospace-font, .disable-bg;
   width: 55%;
   font-size: large;
   margin: 50px auto;
@@ -27,6 +27,7 @@ a:hover {
 }
 
 .navBtns {
+  @extend .disable-bg;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
@@ -36,7 +37,7 @@ a:hover {
 }
 
 .donateBtn {
-  @extend .theme-borders, .monospace-font;
+  @extend .theme-borders, .monospace-font, .disable-bg;
   text-align: center;
   letter-spacing: 2px;
   cursor: pointer;

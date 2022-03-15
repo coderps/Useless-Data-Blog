@@ -4,7 +4,14 @@
 
 .header {
   text-align: center;
-  font-size: 5vw;
+}
+
+.disable-bg {
+  pointer-events: auto;
+}
+
+.enable-bg {
+  pointer-events: none;
 }
 
 .monospace-font {
@@ -19,6 +26,17 @@
   padding: 5px;
   color: white;
   text-align: justify;
+}
+
+/* fonts */
+.eight-bit-font {
+  font-family: "Press Start 2P", cursive;
+}
+
+.gradient-green {
+  background: -webkit-linear-gradient(#003b00, #008f11);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* 
@@ -80,4 +98,19 @@
 .btn-one:hover::after {
   opacity: 0;
   transform: scale(0.1, 1);
+}
+
+.logo {
+  @extend .header, .eight-bit-font, .gradient-green, .enable-bg;
+  font-size: 5vw;
+}
+
+.logo-medium {
+  @extend .logo;
+  font-size: 4vw;
+}
+
+.logo-small {
+  @extend .logo;
+  font-size: 3vw;
 }

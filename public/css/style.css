@@ -246,18 +246,3 @@ canvas {
   margin-right: auto;
   max-width: 80%;
 }
-
-#root {
-  pointer-events: auto;
-}
-
-/* fonts */
-.eight-bit-font {
-  font-family: "Press Start 2P", cursive;
-}
-
-.gradient-green {
-  background: -webkit-linear-gradient(#003b00, #008f11);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
