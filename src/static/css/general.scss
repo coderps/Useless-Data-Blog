@@ -2,6 +2,24 @@
 
 @import "https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300";
 
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: teal;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: aquamarine;
+}
+
 .header {
   text-align: center;
 }

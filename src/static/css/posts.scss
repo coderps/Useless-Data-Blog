@@ -1,0 +1,61 @@
+@use "general";
+
+.general-padding {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.post {
+  @extend .monospace-font, .general-padding;
+  text-align: justify;
+  font-size: large;
+  max-height: 96%;
+  overflow-y: scroll;
+  .title {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: xx-large;
+    text-align: center;
+  }
+  .author {
+    @extend .general-padding;
+    text-align: right;
+    font-style: italic;
+    font-size: large;
+  }
+  .content {
+    .header {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      text-align: left;
+      text-transform: uppercase;
+      border-bottom: 1px solid;
+      border-color: white;
+      font-weight: 600;
+      letter-spacing: 2px;
+      padding-bottom: 5px;
+      width: 99%;
+    }
+    p {
+      @extend .general-padding;
+      line-height: 25px;
+    }
+    figure {
+      @extend .general-padding;
+      figcaption {
+        font-style: italic;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+        img:hover {
+          transition: 0.3s;
+          transform: scale(1.2, 1.2);
+        }
+        .img-theory {
+          width: 40%;
+        }
+      }
+    }
+  }
+}

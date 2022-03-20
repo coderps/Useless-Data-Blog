@@ -6,7 +6,7 @@ const PostLayout = (props) => {
   return (
     <div>
       <Logo font="medium" />
-      <div className="experiments">{props.content}</div>
+      <div className="post-layout">{props.content}</div>
     </div>
   );
 };

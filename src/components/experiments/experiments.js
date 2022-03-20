@@ -14,7 +14,9 @@ const Experiments = () => {
       const link = title.toLowerCase().replaceAll(" ", "-");
       return (
         <div className="card" key={idx}>
-          <Link to={"/experiments/" + link}>{title}</Link>
+          <div className="title">
+            <Link to={"/experiments/" + link}>{title}</Link>
+          </div>
           <div className="imager">
             <img src={image} alt="useless" />
           </div>

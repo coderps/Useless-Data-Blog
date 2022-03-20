@@ -13,6 +13,12 @@
   color: white;
 }
 
+.post-layout {
+  @extend .experiments;
+  width: 70vw;
+  margin: auto;
+}
+
 @keyframes mymove {
   from {
     bottom: 0px;
@@ -35,6 +41,12 @@
   border-radius: 8px;
   border: 10px solid white;
   box-shadow: 10px 5px teal;
+  .title {
+    padding: 3px;
+    font-weight: 600;
+    font-size: small;
+    text-align: left;
+  }
   .imager {
     padding: 10px;
   }
