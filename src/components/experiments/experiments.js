@@ -3,6 +3,7 @@ import Posts from "./posts/posts.json";
 import { Link } from "react-router-dom";
 import PostLayout from "./postLayout";
 import "../../static/css/experiments.scss";
+import image from "../../static/img/Image.jpg";
 
 const Experiments = () => {
   const NumOfPosts = Object.keys(Posts.posts).length;
@@ -10,11 +11,13 @@ const Experiments = () => {
   const getPosts = () => {
     return Object.keys(Posts.posts).map((post, idx) => {
       const title = Posts.posts[post].title;
+      const link = title.toLowerCase().replaceAll(" ", "-");
       return (
-        <div key={idx}>
-          <Link to={"/experiments/" + title.toLowerCase().replaceAll(" ", "-")}>
-            {title}
-          </Link>
+        <div className="card" key={idx}>
+          <Link to={"/experiments/" + link}>{title}</Link>
+          <div className="imager">
+            <img src={image} alt="useless" />
+          </div>
         </div>
       );
     });
@@ -24,8 +27,7 @@ const Experiments = () => {
     return (
       <>
         Posts so far: {NumOfPosts} and counting...
-        {getPosts()}
-        ...Pokemon Cards Go Here
+        <div className="cards">{getPosts()}</div>
       </>
     );
   };
